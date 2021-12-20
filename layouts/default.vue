@@ -22,8 +22,8 @@
       </div>
     </header>
     <main>
-      <jumbotron v-if="isHomepage" />
-      <div class="container mx-auto padding-x">
+      <jumbotron v-if="showJumbotron" />
+      <div class="container mx-auto my-6 padding-x">
         <Nuxt />
       </div>
     </main>
@@ -49,8 +49,8 @@ export default {
     }
   },
   computed: {
-    isHomepage() {
-      return this.$route.path === '/'
+    showJumbotron() {
+      return this.$route.path === '/' || this.$route.path === '/movie'
     },
   },
 }

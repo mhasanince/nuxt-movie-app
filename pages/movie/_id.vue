@@ -1,7 +1,10 @@
 <template>
   <p v-if="$fetchState.pending">Fetching mountains...</p>
   <p v-else-if="$fetchState.error">An error occurred :(</p>
-  <div v-else>{{ movie.title }}</div>
+  <div v-else>
+    <h1>{{ movie.title }}</h1>
+    <section>similar movies</section>
+  </div>
 </template>
 
 <script>

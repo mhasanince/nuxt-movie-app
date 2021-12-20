@@ -1,6 +1,6 @@
 <template>
   <keep-alive>
-    <div class="flex flex-col gap-6 my-6">
+    <div class="flex flex-col gap-6">
       <movie-carousel
         :title="paths.popular.title"
         :fetch-url="paths.popular.fetchUrl"

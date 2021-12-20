@@ -42,9 +42,11 @@ export default {
           [1420, 4],
         ],
         autoplay: true,
+        autoplayTimeout: 5000,
         autoplayHoverPause: true,
         paginationEnabled: false,
         navigationEnabled: true,
+        minSwipeDistance: 0,
       },
       movies: [],
     }

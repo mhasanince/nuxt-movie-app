@@ -5,7 +5,7 @@
     <img
       :src="image"
       :alt="movie.title"
-      class="aspect-[2/3] object-cover rounded-xl h-[225px] drop-shadow-lg"
+      class="aspect-[2/3] object-cover rounded-xl h-[225px] drop-shadow-lg bg-white"
     />
     <div
       class="h-[200px] border border-slate-200 rounded-xl p-6 pl-9 -ml-3 -z-10 flex-1 shadow-lg shadow-slate-200"
@@ -35,7 +35,9 @@ export default {
   },
   computed: {
     image() {
-      return `https://image.tmdb.org/t/p/w200/${this.movie.poster_path}`
+      return this.movie.poster_path
+        ? `https://image.tmdb.org/t/p/w200/${this.movie.poster_path}`
+        : 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png'
     },
     updatedAt() {
       return this.movie.release_date.replaceAll('-', '/')
