@@ -59,6 +59,8 @@ export default {
       .then((data) => data.results)
       .catch((error) => console.log(error))
   },
+  fetchOnServer: false,
+  fetchKey: this.fetchUrl,
   computed: {
     to() {
       return (index) => `/movie/${this.movies[index].id}`

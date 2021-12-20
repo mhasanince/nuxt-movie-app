@@ -29,6 +29,8 @@ export default {
       .then((data) => data.results)
       .catch((error) => console.log(error))
   },
+  fetchOnServer: false,
+  fetchKey: `movie-${this.$route.query.query}`,
   computed: {
     to() {
       return (index) => `/movie/${this.movies[index].id}`
