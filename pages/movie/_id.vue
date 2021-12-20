@@ -23,7 +23,9 @@ export default {
       .catch((error) => console.log(error))
   },
   fetchOnServer: false,
-  fetchKey: `movie-${this.$route.params.id}`,
+  fetchKey() {
+    return `movie-${this.$route.params.id}`
+  },
 }
 </script>
 

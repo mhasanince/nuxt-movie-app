@@ -29,7 +29,7 @@ export default {
     },
     fetchUrl: {
       type: String,
-      default: null,
+      default: '',
     },
   },
   data() {
@@ -60,7 +60,9 @@ export default {
       .catch((error) => console.log(error))
   },
   fetchOnServer: false,
-  fetchKey: this.fetchUrl,
+  fetchKey() {
+    return this.fetchUrl
+  },
   computed: {
     to() {
       return (index) => `/movie/${this.movies[index].id}`
