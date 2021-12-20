@@ -27,19 +27,17 @@
         <Nuxt />
       </div>
     </main>
-    <footer class="min-h-[200px] mt-auto">
-      <div class="container mx-auto padding-x">
-        <h3>Footer</h3>
-      </div>
-    </footer>
+    <custom-footer />
   </div>
 </template>
 
 <script>
 import Jumbotron from '~/components/Jumbotron.vue'
+import CustomFooter from '~/components/CustomFooter.vue'
+
 export default {
   name: 'DefaultLayout',
-  components: { Jumbotron },
+  components: { Jumbotron, CustomFooter },
   data() {
     return {
       menuItems: [
