@@ -1,16 +1,14 @@
 <template>
-  <keep-alive>
-    <div class="flex flex-col gap-6">
-      <movie-carousel
-        :title="paths.popular.title"
-        :fetch-url="paths.popular.fetchUrl"
-      />
-      <movie-carousel
-        :title="paths.upcoming.title"
-        :fetch-url="paths.upcoming.fetchUrl"
-      />
-    </div>
-  </keep-alive>
+  <div class="flex flex-col gap-6">
+    <movie-carousel
+      :title="paths.popular.title"
+      :fetch-url="paths.popular.fetchUrl"
+    />
+    <movie-carousel
+      :title="paths.upcoming.title"
+      :fetch-url="paths.upcoming.fetchUrl"
+    />
+  </div>
 </template>
 
 <script>
