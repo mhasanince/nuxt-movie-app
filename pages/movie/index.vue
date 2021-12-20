@@ -23,15 +23,11 @@ export default {
   },
   async fetch() {
     this.movies = await fetch(
-      `https://api.themoviedb.org/3/search/movie/?api_key=cd4eae47349553be3f09c3fe622b8153&language=en-US&page=1&include_adult=false&query=${this.$route.query.query}`
+      `https://api.themoviedb.org/3/search/movie?api_key=cd4eae47349553be3f09c3fe622b8153&language=en-US&page=1&include_adult=false&query=${this.$route.query.query}`
     )
       .then((response) => response.json())
       .then((data) => data.results)
       .catch((error) => console.log(error))
-  },
-  fetchOnServer: false,
-  fetchKey() {
-    return `movie-${this.$route.query.query}`
   },
   computed: {
     to() {

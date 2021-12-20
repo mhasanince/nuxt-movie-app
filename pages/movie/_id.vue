@@ -22,10 +22,6 @@ export default {
       .then((response) => response.json())
       .catch((error) => console.log(error))
   },
-  fetchOnServer: false,
-  fetchKey() {
-    return `movie-${this.$route.params.id}`
-  },
 }
 </script>
 
