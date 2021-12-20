@@ -45,6 +45,10 @@ export default {
         autoplayHoverPause: true,
         paginationEnabled: false,
         navigationEnabled: true,
+        navigationNextLabel:
+          '<span class="text-2xl font-black text-orange-500" >></span>',
+        navigationPrevLabel:
+          '<span class="text-2xl font-black text-orange-500" ><</span>',
         minSwipeDistance: 0,
       },
       movies: [],
