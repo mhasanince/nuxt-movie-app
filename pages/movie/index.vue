@@ -1,9 +1,7 @@
 <template>
   <div>
     <h1 class="text-3xl font-bold">Search Results</h1>
-    <div
-      class="grid grid-cols-1 gap-4 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2"
-    >
+    <div class="grid grid-cols-1 gap-4 xl:grid-cols-3 lg:grid-cols-2">
       <nuxt-link v-for="(movie, index) in movies" :key="index" :to="to(index)">
         <movie-card :movie="movie" :index="index" />
       </nuxt-link>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3 class="text-3xl font-bold">{{ title }}</h3>
-    <div class="min-h-[265px] px-8">
+    <div class="min-h-[300px] px-8">
       <p v-if="$fetchState.pending">Fetching mountains...</p>
       <p v-else-if="$fetchState.error">An error occurred :(</p>
       <div v-else>
@@ -37,9 +37,8 @@ export default {
       options: {
         perPageCustom: [
           [0, 1],
-          [768, 2],
-          [1024, 3],
-          [1420, 4],
+          [1024, 2],
+          [1420, 3],
         ],
         autoplay: true,
         autoplayTimeout: 5000,
