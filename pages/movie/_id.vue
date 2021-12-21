@@ -16,7 +16,7 @@
           <img
             :src="image"
             :alt="imageAlt"
-            class="w-full sm:max-w-[400px] rounded-xl drop-shadow-lg shadow-slate-100 h-auto"
+            class="sm:max-w-[400px] rounded-xl drop-shadow-lg shadow-slate-100"
           />
         </div>
         <div class="w-full pt-14 lg:pt-4 lg:pl-4">
@@ -27,18 +27,20 @@
               <p>{{ movie.vote_count }}</p>
             </div>
           </div>
-          <div class="flex divide-x-2">
-            <p class="pr-2 font-light">{{ updatedAt }}</p>
-            <div class="flex gap-1 px-2 font-light">
+          <div
+            class="flex flex-col items-center pt-2 m:divide-x-2 sm:pt-0 sm:flex-row"
+          >
+            <p class="pb-1 font-light sm:pr-2">{{ updatedAt }}</p>
+            <div class="flex gap-1 py-1 font-light sm:py-0 sm:px-2">
               <div
                 v-for="(genre, index) in movie.genres"
                 :key="index"
-                class="px-2 py-1 text-xs text-white bg-orange-500 rounded-full cursor-pointer"
+                class="flex items-center justify-center px-2 py-1 text-xs text-white bg-orange-500 rounded-full cursor-pointer"
               >
                 {{ genre.name }}
               </div>
             </div>
-            <p class="pl-2 font-medium">{{ movie.runtime }}m</p>
+            <p class="pt-1 font-medium sm:pt-0 sm:pl-2">{{ movie.runtime }}m</p>
           </div>
           <div class="flex flex-col gap-2 mt-6">
             <blockquote class="p-2 italic border-l-4 border-orange-500">

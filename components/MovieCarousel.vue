@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3 class="text-3xl font-bold">{{ title }}</h3>
-    <div class="min-h-[340px] px-8">
+    <div class="min-h-[340px] lg:px-8">
       <p v-if="$fetchState.pending">Fetching movies...</p>
       <p v-else-if="$fetchState.error">An error occurred :(</p>
       <div v-else>
@@ -45,10 +45,10 @@ export default {
         autoplayHoverPause: true,
         paginationEnabled: false,
         navigationEnabled: true,
-        navigationNextLabel:
-          '<span class="text-2xl font-black text-orange-500" >></span>',
-        navigationPrevLabel:
-          '<span class="text-2xl font-black text-orange-500" ><</span>',
+        // navigationNextLabel:
+        //   '<span class="text-2xl font-black text-orange-500" >></span>',
+        // navigationPrevLabel:
+        //   '<span class="text-2xl font-black text-orange-500" ><</span>',
         minSwipeDistance: 0,
       },
       movies: [],
@@ -70,4 +70,21 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+@media screen and (max-width: 640px) {
+  .VueCarousel-navigation > button:first-child {
+    left: 16px;
+  }
+  .VueCarousel-navigation > button:last-child {
+    right: 16px;
+  }
+}
+@media screen and (min-width: 640px) {
+  .VueCarousel-navigation > button:first-child {
+    left: 8px;
+  }
+  .VueCarousel-navigation > button:last-child {
+    right: 8px;
+  }
+}
+</style>
