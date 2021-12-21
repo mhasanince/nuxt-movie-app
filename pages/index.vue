@@ -22,11 +22,11 @@ export default {
       paths: {
         popular: {
           title: 'Popular Movies',
-          fetchUrl: 'popular',
+          fetchUrl: '/popular',
         },
         upcoming: {
           title: 'Upcoming Movies',
-          fetchUrl: 'upcoming',
+          fetchUrl: '/upcoming',
         },
       },
     }

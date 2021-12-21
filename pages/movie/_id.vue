@@ -52,14 +52,14 @@ export default {
   },
   async fetch() {
     this.movie = await fetch(
-      `https://api.themoviedb.org/3/movie/${this.$route.params.id}?api_key=cd4eae47349553be3f09c3fe622b8153&language=en-US`
+      `${this.$config.apiURL}/movie/${this.$route.params.id}?api_key=${this.$config.apiKey}&language=en-US`
     )
       .then((response) => response.json())
       .catch((error) => console.log(error))
   },
   computed: {
     similarMovieFetchUrl() {
-      return `${this.$route.params.id}/similar`
+      return `/${this.$route.params.id}/similar`
     },
     image() {
       return this.movie.poster_path

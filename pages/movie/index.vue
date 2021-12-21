@@ -21,7 +21,7 @@ export default {
   },
   async fetch() {
     this.movies = await fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=cd4eae47349553be3f09c3fe622b8153&language=en-US&page=1&include_adult=false&query=${this.$route.query.query}`
+      `${this.$config.apiURL}/search/movie?api_key=${this.$config.apiKey}&language=en-US&page=1&include_adult=false&query=${this.$route.query.query}`
     )
       .then((response) => response.json())
       .then((data) => data.results)

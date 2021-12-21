@@ -43,9 +43,8 @@ export default {
       },
     },
   },
-
-  env: {
-    apiURL: 'cd4eae47349553be3f09c3fe622b8153',
+  privateRuntimeConfig: {
+    apiURL: process.env.API_URL,
     apiKey: process.env.API_KEY,
   },
 }
