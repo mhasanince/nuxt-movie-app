@@ -30,6 +30,7 @@ export default {
         } else {
           this.$router.push('/')
         }
+        e.target.blur()
       }
     },
   },
