@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-6">
+  <div class="flex flex-col gap-6 page-container">
     <movie-carousel
       :title="paths.popular.title"
       :fetch-url="paths.popular.fetchUrl"

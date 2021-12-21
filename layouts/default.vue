@@ -49,9 +49,7 @@
     </header>
     <main>
       <jumbotron v-if="showJumbotron" />
-      <div class="container mx-auto my-6 padding-x">
-        <Nuxt />
-      </div>
+      <Nuxt />
     </main>
     <custom-footer />
   </div>
@@ -92,8 +90,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.padding-x {
-  @apply px-4;
-}
-</style>
+<style></style>

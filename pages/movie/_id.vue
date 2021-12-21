@@ -1,41 +1,59 @@
 <template>
   <p v-if="$fetchState.pending">Fetching movie...</p>
   <p v-else-if="$fetchState.error">An error occurred :(</p>
-  <div v-else class="flex flex-col gap-12">
+  <div v-else class="relative">
     <div
-      class="flex flex-col items-center w-full divide-y-2 lg:items-start lg:flex-row lg:divide-y-0 lg:divide-x-2 divide-slate-200"
-    >
-      <div class="pb-8 lg:pr-8">
-        <img
-          :src="image"
-          :alt="imageAlt"
-          class="max-w-[400px] rounded-xl drop-shadow-lg shadow-slate-100"
-        />
-      </div>
-      <div class="w-full pt-4 lg:pl-4">
-        <div class="flex justify-between">
-          <h1 class="text-4xl font-bold">{{ movie.title }}</h1>
-          <div class="flex items-center gap-1">
-            <img src="~/assets/img/star.svg" alt="star" class="w-12 h-12" />
-            <p class="text-xl font-medium">{{ movie.vote_average }}</p>
-          </div>
+      :style="{
+        backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
+      }"
+      class="backdrop"
+    />
+    <div class="flex flex-col gap-12 page-container">
+      <div
+        class="flex flex-col items-center w-full lg:items-start lg:flex-row lg:h-[672px] pt-6"
+      >
+        <div class="pb-8 lg:pb-0 lg:pr-8">
+          <img
+            :src="image"
+            :alt="imageAlt"
+            class="w-full sm:max-w-[400px] rounded-xl drop-shadow-lg shadow-slate-100 h-auto"
+          />
         </div>
-        <div class="flex divide-x divide-slate-200">
-          <p class="pr-2 font-light text-slate-600">{{ updatedAt }}</p>
-          <div class="flex gap-1 px-2 font-light text-slate-600">
-            <div
-              v-for="(genre, index) in movie.genres"
-              :key="index"
-              class="px-2 py-1 text-xs text-white bg-orange-500 rounded-full cursor-pointer"
-            >
-              {{ genre.name }}
+        <div class="w-full pt-14 lg:pt-4 lg:pl-4">
+          <div class="flex justify-between">
+            <h1 class="text-4xl font-bold">{{ movie.title }}</h1>
+            <div class="flex flex-col items-end text-orange-500">
+              <p class="text-3xl font-bold">{{ movie.vote_average }}/10</p>
+              <p>{{ movie.vote_count }}</p>
             </div>
           </div>
-          <p class="pl-2 font-medium text-slate-600">{{ movie.runtime }}m</p>
+          <div class="flex divide-x-2">
+            <p class="pr-2 font-light">{{ updatedAt }}</p>
+            <div class="flex gap-1 px-2 font-light">
+              <div
+                v-for="(genre, index) in movie.genres"
+                :key="index"
+                class="px-2 py-1 text-xs text-white bg-orange-500 rounded-full cursor-pointer"
+              >
+                {{ genre.name }}
+              </div>
+            </div>
+            <p class="pl-2 font-medium">{{ movie.runtime }}m</p>
+          </div>
+          <div class="flex flex-col gap-2 mt-6">
+            <blockquote class="p-2 italic border-l-4 border-orange-500">
+              {{ movie.tagline }}
+            </blockquote>
+            <h3 class="text-xl font-semibold">Overview</h3>
+            <p>{{ movie.overview }}</p>
+          </div>
         </div>
       </div>
+      <movie-carousel
+        title="Similar Movies"
+        :fetch-url="similarMovieFetchUrl"
+      />
     </div>
-    <movie-carousel title="Similar Movies" :fetch-url="similarMovieFetchUrl" />
   </div>
 </template>
 
@@ -78,4 +96,10 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+.backdrop {
+  @apply absolute top-0 -mt-6 -z-10 before:absolute before:inset-0
+  before:bg-orange-500/50 h-[702px] overflow-hidden w-full
+  bg-cover bg-center bg-no-repeat opacity-25 hidden sm:block;
+}
+</style>

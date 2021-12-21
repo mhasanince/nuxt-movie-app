@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-6">
+  <div class="flex flex-col gap-6 page-container">
     <h1 class="text-3xl font-bold">About Page</h1>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore eos rerum

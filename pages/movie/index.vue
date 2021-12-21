@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page-container">
     <h1 class="text-3xl font-bold">Search Results</h1>
     <div class="grid grid-cols-1 gap-4 xl:grid-cols-3 lg:grid-cols-2">
       <nuxt-link v-for="(movie, index) in movies" :key="index" :to="to(index)">
