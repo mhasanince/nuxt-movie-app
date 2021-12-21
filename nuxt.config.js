@@ -43,7 +43,7 @@ export default {
       },
     },
   },
-  privateRuntimeConfig: {
+  publicRuntimeConfig: {
     apiURL: process.env.API_URL,
     apiKey: process.env.API_KEY,
   },

@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3 class="text-3xl font-bold">{{ title }}</h3>
-    <div class="min-h-[300px] px-8">
+    <div class="min-h-[340px] px-8">
       <p v-if="$fetchState.pending">Fetching movies...</p>
       <p v-else-if="$fetchState.error">An error occurred :(</p>
       <div v-else>
