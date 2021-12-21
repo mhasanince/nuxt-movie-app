@@ -1,9 +1,11 @@
 <template>
   <footer class="min-h-[200px] mt-auto bg-orange-500 text-white">
-    <div class="container flex justify-between p-2 mx-auto md:p-4">
+    <div
+      class="container flex flex-col justify-between gap-4 p-4 mx-auto sm:flex-row"
+    >
       <div class="flex flex-col gap-4">
         <h3 class="text-5xl font-bold">LOGO</h3>
-        <p class="max-w-[300px]">
+        <p class="sm:max-w-[300px]">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet
           dolores voluptatibus, quo voluptate aut error accusantium quis
           quisquam tempore ab temporibus veritatis voluptas, itaque quidem.
