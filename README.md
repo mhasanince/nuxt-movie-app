@@ -1,4 +1,4 @@
-# [Live - Appcent Movie App](https://appcent-nuxt-movie-app.vercel.app/)
+# [Live - Movie App](https://nuxt-movie-app.vercel.app/)
 
 ## Build Setup
 
