@@ -1,4 +1,4 @@
-# [Live - Movie App](https://nuxt-movie-app.vercel.app/)
+# [Live - Movie App](https://nuxt-movie-app-alpha.vercel.app/)
 
 ## Build Setup
 
