@@ -4,7 +4,7 @@
       <div
         class="container flex items-center justify-between py-4 mx-auto padding-x"
       >
-        <img src="~/assets/img/appcent-logo.svg" alt="Appcent" />
+        <h1 class="text-2xl font-bold">Nuxt Movie App</h1>
         <nav class="hidden sm:block">
           <ul class="flex gap-4 text-xl font-bold">
             <li
